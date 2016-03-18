@@ -12,8 +12,7 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/transparent"
-        android:fitsSystemWindows="true">
+        android:background="@color/transparent">
 
         <!--scroll 可以滑动-->
         <!--enterAlways 始终进入-->
