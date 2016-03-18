@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/haze_color"
+    android:fitsSystemWindows="true"
+    tools:context="com.choices.weather.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:fitsSystemWindows="true">
+
+        <!--scroll 可以滑动-->
+        <!--enterAlways 始终进入-->
+        <!--enterAlwaysCollapsed 始终进入折叠状态-->
+        <!--exitUntilCollapsed 退出直到折叠状态-->
+        <!--snap 惯性-->
+
+        <com.choices.weather.widget.HeaderLayout
+            android:id="@+id/header_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="80dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:background="@color/colorAccent" />
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/content"
+            android:textSize="20sp" />
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

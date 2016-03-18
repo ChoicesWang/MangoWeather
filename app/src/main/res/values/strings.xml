@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="appbar_header_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$Behavior</string>
+
+    <string name="content">
+        03-17 17:14:44.086 12632-12647/com.choices.weather I/InstantRun: Received Ping message from the IDE; returned active = true
+        03-17 17:14:44.086 12632-12647/com.choices.weather I/InstantRun: Received EOF from the IDE
+        03-17 17:14:44.106 12632-12647/com.choices.weather I/InstantRun: Received connection from IDE: spawning connection thread
+        03-17 17:14:44.116 12632-12647/com.choices.weather I/InstantRun: Receiving 1 changes
+        03-17 17:14:44.206 12632-12647/com.choices.weather I/InstantRun: Received resource changes (resources.ap_)
+        03-17 17:14:44.226 12632-12647/com.choices.weather I/InstantRun: Finished loading changes; update mode =3
+        03-17 17:14:44.226 12632-12647/com.choices.weather I/InstantRun: Waiting for app to be killed and restarted by the IDE
+        03-17 17:14:44.226 12632-12647/com.choices.weather I/InstantRun: Received EOF from the IDE
+        03-17 17:14:44.086 12632-12647/com.choices.weather I/InstantRun: Received Ping message from the IDE; returned active = true
+        03-17 17:14:44.086 12632-12647/com.choices.weather I/InstantRun: Received EOF from the IDE
+        03-17 17:14:44.106 12632-12647/com.choices.weather I/InstantRun: Received connection from IDE: spawning connection thread
+        03-17 17:14:44.116 12632-12647/com.choices.weather I/InstantRun: Receiving 1 changes
+        03-17 17:14:44.206 12632-12647/com.choices.weather I/InstantRun: Received resource changes (resources.ap_)
+        03-17 17:14:44.226 12632-12647/com.choices.weather I/InstantRun: Finished loading changes; update mode =3
+        03-17 17:14:44.226 12632-12647/com.choices.weather I/InstantRun: Waiting for app to be killed and restarted by the IDE
+        03-17 17:14:44.226 12632-12647/com.choices.weather I/InstantRun: Received EOF from the IDE
+        03-17 17:14:44.086 12632-12647/com.choices.weather I/InstantRun: Received Ping message from the IDE; returned active = true
+        03-17 17:14:44.086 12632-12647/com.choices.weather I/InstantRun: Received EOF from the IDE
+        03-17 17:14:44.106 12632-12647/com.choices.weather I/InstantRun: Received connection from IDE: spawning connection thread
+        03-17 17:14:44.116 12632-12647/com.choices.weather I/InstantRun: Receiving 1 changes
+        03-17 17:14:44.206 12632-12647/com.choices.weather I/InstantRun: Received resource changes (resources.ap_)
+        03-17 17:14:44.226 12632-12647/com.choices.weather I/InstantRun: Finished loading changes; update mode =3
+        03-17 17:14:44.226 12632-12647/com.choices.weather I/InstantRun: Waiting for app to be killed and restarted by the IDE
+        03-17 17:14:44.226 12632-12647/com.choices.weather I/InstantRun: Received EOF from the IDE
+    </string>
+</resources>
