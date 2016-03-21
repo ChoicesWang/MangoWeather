@@ -5,6 +5,7 @@ import android.content.Context;
 import android.support.design.widget.AppBarLayout;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -39,6 +40,8 @@ public class HeaderLayout extends FrameLayout implements AppBarLayout.OnOffsetCh
     TextView low;
     @Bind(R.id.high_low)
     LinearLayout highLow;
+    @Bind(R.id.image_bg)
+    ImageView imageBg;
 
     public HeaderLayout(Context context) {
         this(context, null);
@@ -83,5 +86,9 @@ public class HeaderLayout extends FrameLayout implements AppBarLayout.OnOffsetCh
         temp.setAlpha(alpha);
         week.setAlpha(alpha);
         highLow.setAlpha(alpha);
+
+        float scale = 1 + 0.001f * absOffset;
+        imageBg.setScaleX(scale);
+        imageBg.setScaleY(scale);
     }
 }

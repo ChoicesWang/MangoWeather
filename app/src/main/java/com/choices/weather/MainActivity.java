@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onNext(Weather weatherData) {
             headerLayout.setWeatherData(weatherData);
-            root.setBackgroundResource(R.color.weather_100);
         }
     };
 }
