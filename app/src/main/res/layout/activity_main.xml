@@ -33,6 +33,7 @@
             android:background="@color/divider_color" />
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/hour_temp"
             android:layout_width="match_parent"
             android:layout_height="95dp"
             android:orientation="horizontal"
@@ -44,17 +45,12 @@
             android:background="@color/divider_color" />
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/day_temp"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/content"
-            android:textSize="20sp" />
-    </android.support.v4.widget.NestedScrollView>
-
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </android.support.design.widget.CoordinatorLayout>

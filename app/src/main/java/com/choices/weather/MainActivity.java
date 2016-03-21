@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.choices.weather.adapter.DayAdapter;
 import com.choices.weather.bean.Weather;
 import com.choices.weather.http.HttpManager;
 import com.choices.weather.widget.HeaderLayout;
@@ -24,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
     HeaderLayout headerLayout;
     @Bind(R.id.root)
     CoordinatorLayout root;
+    @Bind(R.id.hour_temp)
+    RecyclerView hourRecyclerView;
+    @Bind(R.id.day_temp)
+    RecyclerView dayRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onNext(Weather weatherData) {
             headerLayout.setWeatherData(weatherData);
+            dayRecyclerView.setAdapter(new DayAdapter(weatherData.dailyForecast));
         }
     };
 }

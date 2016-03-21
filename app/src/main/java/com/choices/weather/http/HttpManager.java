@@ -3,6 +3,8 @@ package com.choices.weather.http;
 import com.choices.weather.BuildConfig;
 import com.choices.weather.bean.Weather;
 import com.choices.weather.bean.WeatherData;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -44,11 +46,12 @@ public class HttpManager {
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(BuildConfig.DEBUG ? interceptor : null)
                 .build();
+        Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(client)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
         api = retrofit.create(HeFengApi.class);

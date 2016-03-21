@@ -13,6 +13,8 @@ import com.choices.weather.R;
 import com.choices.weather.Util;
 import com.choices.weather.bean.Weather;
 
+import java.util.Date;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -68,8 +70,8 @@ public class HeaderLayout extends FrameLayout implements AppBarLayout.OnOffsetCh
         temp.setText(weatherData.now.tmp);
         high.setText(weatherData.dailyForecast.get(0).tmp.max);
         low.setText(weatherData.dailyForecast.get(0).tmp.min);
-        String str = weatherData.dailyForecast.get(0).date;
-        week.setText(Util.getWeekOfDate(str));
+        Date date = weatherData.dailyForecast.get(0).date;
+        week.setText(Util.getWeekOfDate(date));
     }
 
     @Override
