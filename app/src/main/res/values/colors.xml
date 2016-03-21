@@ -7,5 +7,7 @@
     <color name="transparent">#00000000</color>
     <color name="text_color_1">#FDFDFD</color>
 
-    <color name="haze_color">#A4ACAA</color>
+    <color name="divider_color">#C8A5BECC</color>
+
+    <color name="weather_100">#4297C1</color>
 </resources>

@@ -56,16 +56,15 @@ public class HeaderLayout extends FrameLayout implements AppBarLayout.OnOffsetCh
     private void initView(Context context) {
         inflate(context, R.layout.header_layout, this);
         ButterKnife.bind(this, this);
-
     }
 
     @SuppressLint("SetTextI18n")
     public void setWeatherData(Weather weatherData) {
         city.setText(weatherData.basic.city);
         weather.setText(weatherData.now.cond.txt);
-        temp.setText(weatherData.now.tmp + "°");
-        high.setText(weatherData.dailyForecast.get(0).tmp.max + "°");
-        low.setText(weatherData.dailyForecast.get(0).tmp.min + "°");
+        temp.setText(weatherData.now.tmp);
+        high.setText(weatherData.dailyForecast.get(0).tmp.max);
+        low.setText(weatherData.dailyForecast.get(0).tmp.min);
         String str = weatherData.dailyForecast.get(0).date;
         week.setText(Util.getWeekOfDate(str));
     }

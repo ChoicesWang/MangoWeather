@@ -3,12 +3,12 @@ package com.choices.weather;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.choices.weather.bean.Weather;
-import com.choices.weather.bean.WeatherData;
 import com.choices.weather.widget.HeaderLayout;
 
 import butterknife.Bind;
@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     AppBarLayout appbar;
     @Bind(R.id.header_layout)
     HeaderLayout headerLayout;
+    @Bind(R.id.root)
+    CoordinatorLayout root;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onNext(Weather weatherData) {
             headerLayout.setWeatherData(weatherData);
+            root.setBackgroundResource(R.color.weather_100);
         }
     };
 }
