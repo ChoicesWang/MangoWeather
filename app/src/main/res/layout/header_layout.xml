@@ -16,7 +16,6 @@
             android:id="@+id/city"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="北京市"
             android:textColor="@color/text_color_1"
             android:textSize="30sp" />
 
@@ -24,7 +23,6 @@
             android:id="@+id/weather"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="有霾"
             android:textColor="@color/text_color_1"
             android:textSize="15sp" />
     </LinearLayout>
@@ -36,8 +34,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/city_info"
         android:layout_centerHorizontal="true"
-        android:paddingLeft="30dp"
-        android:text="22°"
         android:textColor="@color/text_color_1"
         android:textSize="85sp" />
 
@@ -48,7 +44,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="18dp"
-        android:text="星期五"
         android:textColor="@color/text_color_1"
         android:textSize="18sp" />
 
@@ -65,7 +60,6 @@
             android:id="@+id/high"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="17°"
             android:textColor="@color/text_color_1"
             android:textSize="18sp" />
 
@@ -74,10 +68,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="4°"
             android:textColor="@color/text_color_1"
             android:textSize="18sp" />
     </LinearLayout>
-
 
 </RelativeLayout>

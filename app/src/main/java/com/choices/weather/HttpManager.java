@@ -1,5 +1,6 @@
 package com.choices.weather;
 
+import com.choices.weather.bean.Weather;
 import com.choices.weather.bean.WeatherData;
 
 import okhttp3.OkHttpClient;
@@ -9,6 +10,7 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 
@@ -26,7 +28,7 @@ public class HttpManager {
 
     private HeFengApi api;
 
-    public static HttpManager getInstance() {
+    public static HttpManager ins() {
         synchronized (mLock) {
             if (mInstance == null) {
                 mInstance = new HttpManager();
@@ -39,7 +41,7 @@ public class HttpManager {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder()
-                .addInterceptor(interceptor)
+                .addInterceptor(BuildConfig.DEBUG ? interceptor : null)
                 .build();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -51,10 +53,22 @@ public class HttpManager {
         api = retrofit.create(HeFengApi.class);
     }
 
-    public void getWeather(Subscriber<WeatherData> subscriber, String city) {
+    public void getWeather(Subscriber<Weather> subscriber, String city) {
         api.getWeatherData(city, MY_KEY)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .filter(new Func1<WeatherData, Boolean>() {
+                    @Override
+                    public Boolean call(WeatherData weatherData) {
+                        return weatherData.mHeWeatherDataService.get(0).status.equals("ok");
+                    }
+                })
+                .map(new Func1<WeatherData, Weather>() {
+                    @Override
+                    public Weather call(WeatherData weatherData) {
+                        return weatherData.mHeWeatherDataService.get(0);
+                    }
+                })
                 .subscribe(subscriber);
     }
 

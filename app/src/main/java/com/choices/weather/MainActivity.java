@@ -7,10 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.choices.weather.bean.Weather;
+import com.choices.weather.bean.WeatherData;
 import com.choices.weather.widget.HeaderLayout;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import rx.Subscriber;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,5 +37,24 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         appbar.addOnOffsetChangedListener(headerLayout);
+
+        HttpManager.ins().getWeather(mSubscriber, "北京");
     }
+
+    private Subscriber<Weather> mSubscriber = new Subscriber<Weather>() {
+        @Override
+        public void onCompleted() {
+
+        }
+
+        @Override
+        public void onError(Throwable e) {
+
+        }
+
+        @Override
+        public void onNext(Weather weatherData) {
+            headerLayout.setWeatherData(weatherData);
+        }
+    };
 }
