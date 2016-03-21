@@ -27,10 +27,11 @@
             android:minHeight="80dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap" />
 
-        <View
+        <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="95dp"
-            android:background="@color/colorAccent" />
+            android:orientation="horizontal"
+            app:layoutManager="LinearLayoutManager" />
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
