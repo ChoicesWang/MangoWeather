@@ -1,4 +1,4 @@
-package com.choices.weather;
+package com.choices.weather.http;
 
 import com.choices.weather.bean.WeatherData;
 

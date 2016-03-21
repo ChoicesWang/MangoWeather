@@ -1,5 +1,6 @@
-package com.choices.weather;
+package com.choices.weather.http;
 
+import com.choices.weather.BuildConfig;
 import com.choices.weather.bean.Weather;
 import com.choices.weather.bean.WeatherData;
 

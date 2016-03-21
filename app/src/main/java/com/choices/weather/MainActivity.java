@@ -9,6 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.choices.weather.bean.Weather;
+import com.choices.weather.http.HttpManager;
 import com.choices.weather.widget.HeaderLayout;
 
 import butterknife.Bind;
