@@ -11,12 +11,24 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    signingConfigs {
+        release {
+            keyAlias 'ch'
+            keyPassword 'choices'
+            storePassword 'choices'
+            storeFile file('D:/MyKey/choices_key.jks')
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFile 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
+
 }
 
 dependencies {
@@ -32,7 +44,7 @@ dependencies {
     compile 'com.android.support:gridlayout-v7:23.2.1'
     //noinspection GradleDependency
     //compile 'com.android.support:palette-v7:23.2.1'
-    
+
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.squareup.retrofit2:retrofit:2.0.0'
     compile 'com.squareup.retrofit2:converter-gson:2.0.0'
