@@ -1,5 +1,6 @@
 package com.choices.weather;
 
+import android.support.annotation.DrawableRes;
 import android.util.Log;
 
 import java.text.DateFormat;
@@ -36,6 +37,7 @@ public class Util {
         return week;
     }
 
+    @DrawableRes
     public static int getDrawable(String code) {
         switch (code) {
             case "100":
