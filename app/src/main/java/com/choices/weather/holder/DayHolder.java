@@ -36,5 +36,6 @@ public class DayHolder extends BaseViewHolder<Weather.DailyForecastEntity> {
         xWeek.setText(Util.getWeekOfDate(day.date));
         xHigh.setText(day.tmp.max);
         xLow.setText(day.tmp.min);
+        xImage.setImageResource(Util.getDrawable(day.cond.codeD));
     }
 }
