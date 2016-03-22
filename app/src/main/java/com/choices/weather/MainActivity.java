@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         appbar.addOnOffsetChangedListener(headerLayout);
 
-        HttpManager.ins().getWeather(mSubscriber, "北京");
+        HttpManager.ins(this.getApplication()).getWeather(mSubscriber, "北京");
     }
 
     private Subscriber<Weather> mSubscriber = new Subscriber<Weather>() {

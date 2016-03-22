@@ -1,11 +1,15 @@
 package com.choices.weather.http;
 
+import android.app.Application;
+import android.content.Context;
+
 import com.choices.weather.BuildConfig;
 import com.choices.weather.bean.Weather;
 import com.choices.weather.bean.WeatherData;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -31,21 +35,26 @@ public class HttpManager {
 
     private HeFengApi api;
 
-    public static HttpManager ins() {
+    public static HttpManager ins(Application context) {
         synchronized (mLock) {
             if (mInstance == null) {
-                mInstance = new HttpManager();
+                mInstance = new HttpManager(context);
             }
             return mInstance;
         }
     }
 
-    public HttpManager() {
+    public HttpManager(Context context) {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+        Cache cache = new Cache(context.getCacheDir(), 40 * 1024 * 1024);
+
         OkHttpClient client = new OkHttpClient.Builder()
-                .addInterceptor(BuildConfig.DEBUG ? interceptor : null)
+                .addNetworkInterceptor(interceptor)
+                .cache(cache)
                 .build();
+
         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)

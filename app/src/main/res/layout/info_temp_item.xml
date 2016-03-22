@@ -13,47 +13,47 @@
     <!--如果是wrap_content，则每一item的高就是内容的宽，我觉得是个bug-->
     <TextView
         style="@style/text_title_type"
-        android:text="日出：" />
+        android:text="日出:" />
 
     <TextView
         style="@style/text_title_type"
-        android:text="日落：" />
-
-    <TextView
-        style="@style/text_title_type"
-        android:layout_marginTop="8dp"
-        android:text="湿度：" />
-
-    <TextView
-        style="@style/text_title_type"
-        android:text="降雨概率：" />
+        android:text="日落:" />
 
     <TextView
         style="@style/text_title_type"
         android:layout_marginTop="8dp"
-        android:text="风速：" />
+        android:text="湿度:" />
 
     <TextView
         style="@style/text_title_type"
-        android:text="体感温度：" />
-
-    <TextView
-        style="@style/text_title_type"
-        android:layout_marginTop="8dp"
-        android:text="降水量：" />
-
-    <TextView
-        style="@style/text_title_type"
-        android:text="气压：" />
+        android:text="降雨概率:" />
 
     <TextView
         style="@style/text_title_type"
         android:layout_marginTop="8dp"
-        android:text="能见度：" />
+        android:text="风速:" />
 
     <TextView
         style="@style/text_title_type"
-        android:text="紫外线指数：" />
+        android:text="体感温度:" />
+
+    <TextView
+        style="@style/text_title_type"
+        android:layout_marginTop="8dp"
+        android:text="降水量:" />
+
+    <TextView
+        style="@style/text_title_type"
+        android:text="气压:" />
+
+    <TextView
+        style="@style/text_title_type"
+        android:layout_marginTop="8dp"
+        android:text="能见度:" />
+
+    <TextView
+        style="@style/text_title_type"
+        android:text="紫外线指数:" />
 
     <TextView
         android:id="@+id/sunup_time"
