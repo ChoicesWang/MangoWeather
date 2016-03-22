@@ -2,20 +2,14 @@ package com.choices.weather.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.choices.weather.R;
 import com.choices.weather.bean.Weather;
 import com.choices.weather.holder.BaseViewHolder;
-import com.choices.weather.holder.DayTempHolder;
-
-import java.util.ArrayList;
-
-import butterknife.Bind;
-import butterknife.ButterKnife;
+import com.choices.weather.holder.DayHolder;
+import com.choices.weather.holder.DescHolder;
+import com.choices.weather.holder.InfoHolder;
 
 /**
  * Created by Choices on 2016/3/21.
@@ -23,34 +17,61 @@ import butterknife.ButterKnife;
  */
 public class DayAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
-    private ArrayList<Weather.DailyForecastEntity> data;
+    private static final int TYPE_DAY = 0;
+    private static final int TYPE_DESC = 1;
+    private static final int TYPE_INFO = 2;
 
-    public DayAdapter(ArrayList<Weather.DailyForecastEntity> data) {
-        this.data = data;
+    private Weather weather;
+
+    public DayAdapter(Weather weather) {
+        this.weather = weather;
     }
 
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater factory = LayoutInflater.from(parent.getContext());
-        View root = factory.inflate(R.layout.day_temp_item, parent, false);
-        return new DayTempHolder(root);
+
+        switch (viewType) {
+            case TYPE_DAY:
+                return new DayHolder(factory.inflate(R.layout.day_temp_item, parent, false));
+            case TYPE_DESC:
+                return new DescHolder(factory.inflate(R.layout.desc_temp_item, parent, false));
+            case TYPE_INFO:
+                return new InfoHolder(factory.inflate(R.layout.info_temp_item, parent, false));
+            default:
+                throw new IllegalArgumentException("DayAdapter view type is error  tyep = " + viewType);
+        }
     }
 
     @Override
     public void onBindViewHolder(BaseViewHolder holder, int position) {
-        if (holder instanceof DayTempHolder) {
-            ((DayTempHolder) holder).onBind(data.get(position));
+        if (holder instanceof DayHolder) {
+            DayHolder dayHolder = (DayHolder) holder;
+            dayHolder.onBind(weather.dailyForecast.get(position));
+        } else if (holder instanceof DescHolder) {
+            DescHolder descHolder = (DescHolder) holder;
+            descHolder.onBind(weather);
+        } else if (holder instanceof InfoHolder) {
+            InfoHolder infoHolder = (InfoHolder) holder;
+            infoHolder.onBind(weather);
         }
     }
 
     @Override
     public int getItemCount() {
-        return data != null ? data.size() : 0;
+        if (weather == null) return 0;
+        return weather.dailyForecast.size() + 2;
     }
 
     @Override
     public int getItemViewType(int position) {
-        return 0;
+        if (position == getItemCount() - 1) {
+            return TYPE_INFO;
+        } else if (position == getItemCount() - 2) {
+            return TYPE_DESC;
+        } else {
+            return TYPE_DAY;
+        }
     }
 
 }

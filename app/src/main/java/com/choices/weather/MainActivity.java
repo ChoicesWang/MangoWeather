@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onNext(Weather weatherData) {
             headerLayout.setWeatherData(weatherData);
-            dayRecyclerView.setAdapter(new DayAdapter(weatherData.dailyForecast));
+            dayRecyclerView.setAdapter(new DayAdapter(weatherData));
         }
     };
 }

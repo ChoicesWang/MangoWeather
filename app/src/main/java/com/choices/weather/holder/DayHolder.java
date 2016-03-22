@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
  * Created by Choices on 2016/3/21.
  * email: zezeviyao@163.com
  */
-public class DayTempHolder extends BaseViewHolder<Weather.DailyForecastEntity> {
+public class DayHolder extends BaseViewHolder<Weather.DailyForecastEntity> {
 
     @Bind(R.id.x_week)
     TextView xWeek;
@@ -26,7 +26,7 @@ public class DayTempHolder extends BaseViewHolder<Weather.DailyForecastEntity> {
     @Bind(R.id.x_low)
     TextView xLow;
 
-    public DayTempHolder(View itemView) {
+    public DayHolder(View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
     }
