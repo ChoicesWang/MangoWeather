@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="38dp"
-    android:paddingTop="8dp"
+    android:paddingBottom="92dp"
+    android:paddingTop="10dp"
     app:columnCount="2"
     app:orientation="vertical"
     app:rowCount="10">
@@ -22,11 +22,11 @@
     <TextView
         style="@style/text_title_type"
         android:layout_marginTop="8dp"
-        android:text="降雨概率：" />
+        android:text="湿度：" />
 
     <TextView
         style="@style/text_title_type"
-        android:text="湿度：" />
+        android:text="降雨概率：" />
 
     <TextView
         style="@style/text_title_type"
@@ -56,47 +56,47 @@
         android:text="紫外线指数：" />
 
     <TextView
-        style="@style/text_info_type"
-        android:text="日出：" />
+        android:id="@+id/sunup_time"
+        style="@style/text_info_type" />
 
     <TextView
-        style="@style/text_info_type"
-        android:text="日落：" />
+        android:id="@+id/sunset_time"
+        style="@style/text_info_type" />
 
     <TextView
+        android:id="@+id/hum"
         style="@style/text_info_type"
-        android:layout_marginTop="8dp"
-        android:text="降雨概率：" />
+        android:layout_marginTop="8dp" />
 
     <TextView
-        style="@style/text_info_type"
-        android:text="湿度：" />
+        android:id="@+id/pop"
+        style="@style/text_info_type" />
 
     <TextView
+        android:id="@+id/spd"
         style="@style/text_info_type"
-        android:layout_marginTop="8dp"
-        android:text="风速：" />
+        android:layout_marginTop="8dp" />
 
     <TextView
-        style="@style/text_info_type"
-        android:text="体感温度：" />
+        android:id="@+id/now_fl"
+        style="@style/text_info_type" />
 
     <TextView
+        android:id="@+id/pcpn"
         style="@style/text_info_type"
-        android:layout_marginTop="8dp"
-        android:text="降水量：" />
+        android:layout_marginTop="8dp" />
 
     <TextView
-        style="@style/text_info_type"
-        android:text="气压：" />
+        android:id="@+id/pres"
+        style="@style/text_info_type" />
 
     <TextView
+        android:id="@+id/vis"
         style="@style/text_info_type"
-        android:layout_marginTop="8dp"
-        android:text="能见度：" />
+        android:layout_marginTop="8dp" />
 
     <TextView
-        style="@style/text_info_type"
-        android:text="紫外线指数：" />
+        android:id="@+id/uv_brf"
+        style="@style/text_info_type" />
 
 </android.support.v7.widget.GridLayout>
